@@ -289,6 +289,8 @@ QtGLVideoItem::onSceneGraphInitialized ()
   QWindow* window = this->window();
 #endif
 
+  if (!this->window()) { return; } // FS: added
+
   GST_DEBUG ("scene graph initialization with Qt GL context %p",
       this->window()->openglContext ());
 
